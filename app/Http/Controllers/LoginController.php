@@ -20,14 +20,19 @@ class LoginController extends Controller
     public function check(Request $request){
 
 
-        $response = $request->create('http://auth-zix.herokuapp.com/api/auth/login?','POST',[
+    $client = new \GuzzleHttp\Client();
+    $res = $client->get('https://auth-zix.herokuapp.com/api/auth/login',[
+
+        'query' => [
 
             'username' => 'ziadaligom3a',
             'password' => 'ziadaligom3a'
-        ]);
+        ]
 
-        $response1 = Route::dispatch($request);
-        return dd($response1);
+    ]);
+    dd($res);
+    echo $res->getStatusCode(); // 200
+    echo $res->getBody(); //
 
       
     }
