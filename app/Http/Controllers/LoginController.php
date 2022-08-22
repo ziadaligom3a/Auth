@@ -21,7 +21,7 @@ class LoginController extends Controller
 
 
     $client = new \GuzzleHttp\Client();
-    $res = $client->get('https://auth-zix.herokuapp.com/api/auth/login',[
+    $res = $client->post('https://auth-zix.herokuapp.com/api/auth/login',[
 
         'query' => [
 
