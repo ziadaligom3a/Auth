@@ -20,14 +20,13 @@ class LoginController extends Controller
     public function check(Request $request){
 
 
-        $response = $request->create('http://127.0.0.1:8000/api/auth/login?','POST',[
+        $response = $request->create('http://auth-zix.herokuapp.com/api/auth/login?','POST',[
 
             'username' => 'ziadaligom3a',
             'password' => 'ziadaligom3a'
         ]);
 
         $response1 = Route::dispatch($request);
-
         return dd($response1);
 
       
