@@ -23,15 +23,15 @@ class LoginController extends Controller
     $client = new \GuzzleHttp\Client();
     $res = $client->post('https://auth-zix.herokuapp.com/api/auth/login',[
 
-        'query' => [
+        
 
             'username' => 'ziadaligom3a',
             'password' => 'ziadaligom3a'
-        ]
+        
 
     ]);
     // dd($res);
-    return $res;
+    return $res->getStatusCode();;
 
       
     }
