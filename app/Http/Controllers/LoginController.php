@@ -30,7 +30,7 @@ class LoginController extends Controller
         ]
 
     ]);
-    dd($res);
+    // dd($res);
     echo $res->getStatusCode(); // 200
     echo $res->getBody(); //
 
